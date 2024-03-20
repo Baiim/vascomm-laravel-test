@@ -24,7 +24,7 @@
                                 Jumlah User
                             </div>
                             <div class="dashboard-card-subtitle " style="font-size: 20px">
-                                 50 User
+                                 {{$users}} User
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                                 Jumlah User Aktif
                             </div>
                             <div class="dashboard-card-subtitle " style="font-size: 20px">
-                                 50 User
+                                 {{$user_count_active}} User
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 Jumlah Produk
                             </div>
                             <div class="dashboard-card-subtitle " style="font-size: 20px">
-                                 50 Produk
+                                 {{$products}} Produk
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,42 @@
                                 Jumlah Produk Aktif
                             </div>
                             <div class="dashboard-card-subtitle " style="font-size: 20px">
-                                 50 Produk
+                                 {{$product_count_active}} Produk
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <div class="dashboard-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dashboard-heading">
+                                <h2 class="dashboard-title">Produk Terbaru</h2>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
+                                    <thead style="background-color: #C2D6FF">
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Produk</th>
+                                        <th>Tanggal Dibuat</th>
+                                        <th>Harga</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($product as $key => $product)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $product->name }}</td>
+                                            <td>{{ $product->created_at->format('d M Y') }}</td>
+                                            <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

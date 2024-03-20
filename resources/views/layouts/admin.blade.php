@@ -13,6 +13,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="{{asset('./admin/style/main.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     @stack('css')
   </head>
 
@@ -26,29 +28,23 @@
           </div>
           <div class="list-group list-group-flush">
             <a
-              href="}"
+              href="{{route('dashboard')}}"
               class="list-group-item list-group-item-action {{ Route::currentRouteNamed('dashboard') ? 'active' : '' }} "
             >
               Dashboard
             </a>
             <a
-              href=""
-              class="list-group-item list-group-item-action {{ Route::currentRouteNamed('customer') ? 'active' : '' }} "
+              href="{{route('user')}}"
+              class="list-group-item list-group-item-action {{ Route::currentRouteNamed('user') ? 'active' : '' }} "
             >
               Manajemen User
             </a>
             <a
-            href=""
-            class="list-group-item list-group-item-action {{ Route::currentRouteNamed('customer') ? 'active' : '' }} "
+            href="{{route('product')}}"
+            class="list-group-item list-group-item-action {{ Route::currentRouteNamed('product') ? 'active' : '' }} "
           >
             Manajemen Produk
           </a>
-            <a
-              href=""
-              class="list-group-item list-group-item-action"
-            >
-              Sign Out
-            </a>
           </div>
         </div>
 
@@ -90,11 +86,19 @@
                         class="rounded-circle mr-2 profile-picture"
                       />
                       Selamat Datang,
-                      {{-- {{ Auth::user()->name }} --}}
+                      {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu">
-                      <a href="{{route('logout')}}" class="dropdown-item">Logout</a>
-                    </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="padding: 25px;">
+                      <!-- Foto profil -->
+                      <div style="text-align: center;">
+                          <img src="{{asset('img/logo.svg')}}" alt="Profile Picture" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;  border: 2px solid #ccc;">
+                          <div><p style="font-size: 14px">{{ Auth::user()->name }}</p> <p style="font-size: 10px">{{ Auth::user()->email }}</p></div>
+                      </div>
+                      <div class="dropdown-divider"></div>
+                      <!-- Tombol Logout -->
+                      <a href="{{route('logout')}}" class="dropdown-item text-danger text-center"><img src="{{asset('img/power.svg')}}" alt="">Logout</a>
+                  </div>
+                  
                   </li>
                 </ul>
 
@@ -117,6 +121,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('./admin/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('./admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.js"></script>

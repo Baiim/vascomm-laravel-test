@@ -7,8 +7,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <button class="btn btn-outline-primary mr-2">MASUK</button>
-        <button class="btn btn-primary">DAFTAR</button>
+        <a href="{{route('login')}}" class="btn btn-outline-primary mr-2">MASUK</a>
+        <a href="{{route('register')}}" class="btn btn-primary">DAFTAR</a>
       </div>
     </div>
 </nav>

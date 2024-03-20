@@ -5,6 +5,13 @@
   <!-- Custom CSS -->
   <style>
     /* Customize CSS here */
+    .html {
+      font-family: 'Poppins', sans-serif; 
+    }
+
+    .body {
+      font-family: 'Poppins', sans-serif; 
+    }
   
     /* Navbar */
     .navbar {

@@ -10932,7 +10932,7 @@ footer p {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  color: #ff7158;
+  color: #41A0E4;
   margin-bottom: 10px;
 }
 
@@ -10950,7 +10950,7 @@ footer p {
 }
 
 .page-details .store-gallery .thumbnail-image:hover, .page-details .store-gallery .thumbnail-image.active {
-  border: 2px solid #ff7158;
+  border: 2px solid #41A0E4;
 }
 
 .page-details .store-description p {
@@ -11210,7 +11210,7 @@ footer p {
 .page-dashboard .list-group-item.active {
   background: -webkit-gradient(linear, right top, left top, color-stop(2%, rgba(255, 113, 88, 0.32)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(270deg, rgba(255, 113, 88, 0.32) 2%, rgba(255, 255, 255, 0) 100%);
-  border-right: 4px solid #ff7158;
+  border-right: 4px solid #41A0E4;
   color: #0c0d36;
 }
 
@@ -11376,7 +11376,7 @@ footer p {
 .component-products .products-price {
   font-weight: 500;
   font-size: 16px;
-  color: #ff7158;
+  color: #41A0E4;
 }
 
 .card {
